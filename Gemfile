@@ -2,7 +2,14 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
-
+# Imitating User behaviour
+gem 'capybara'
+# Adds support for Capybara system testing and selenium driver
+gem 'selenium-webdriver', '~> 3.142', '>= 3.142.7'
+# Easy installation and use of chromedriver to run system tests with Chrome
+gem 'chromedriver-helper'
+# Parsing data from website
+gem 'nokogiri'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.2'
 # Use postgresql as the database for Active Record
@@ -59,11 +66,7 @@ group :development do
 end
 
 group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
