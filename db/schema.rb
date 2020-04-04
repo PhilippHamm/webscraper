@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_03_29_112212) do
     t.string "emission"
     t.string "num_seats"
     t.string "door_count"
-    t.string "transition"
+    t.string "transmission"
     t.string "emission_class"
     t.string "emssion_sticker"
     t.string "first_registration"
