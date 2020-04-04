@@ -13,7 +13,7 @@ class CreateCars < ActiveRecord::Migration[5.2]
       t.string :emission
       t.string :num_seats
       t.string :door_count
-      t.string :transition
+      t.string :transmission
       t.string :emission_class
       t.string :emssion_sticker
       t.string :first_registration
