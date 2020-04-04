@@ -142,6 +142,7 @@ class CarsController < ApplicationController
         car.dealer_rating = find('#rbt-top-dealer-info > div > div > span > a > span.star-rating-s.u-valign-middle.u-margin-right-9')['data-rating']
 
         features = all('#rbt-features > div > div.g-col-6 > div.bullet-list > p').map { |p| p.text }
+
         raise
         cars.push(car)
         i += 1
