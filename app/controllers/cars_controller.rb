@@ -19,7 +19,7 @@ class CarsController < ApplicationController
     @car = Car.new
     cars = scraper(@car, car_params[:dealer_city])
     csv_options = { col_sep: ',' }
-    filepath    = Rails.root.join('lib', 'data', 'mobile.csv')
+    filepath    = Rails.root.join('lib', 'data', 'mobile_munich.csv')
     CSV.open(filepath, 'wb', csv_options) do |csv|
       csv << [
         'title',
@@ -33,6 +33,7 @@ class CarsController < ApplicationController
         'power',
         'fuel',
         'emission',
+        'num_owners',
         'num_seats',
         'door_count',
         'transmission',
@@ -41,6 +42,7 @@ class CarsController < ApplicationController
         'first_registration',
         'hu',
         'climatisation',
+        'construction_year',
         'park_assist',
         'airbag',
         'manufacturer_color_name',
@@ -58,9 +60,6 @@ class CarsController < ApplicationController
         'image_10',
         'image_11',
         'image_12',
-        'image_13',
-        'image_14',
-        'image_15',
         'features',
         'dealer_name',
         'dealer_postal_code',
@@ -68,6 +67,7 @@ class CarsController < ApplicationController
         'dealer_address',
         'dealer_phone',
         'dealer_rating',
+        'dealer_quantity_ratings',
         'publishing_date'
       ]
       cars.each do |car|
@@ -83,6 +83,7 @@ class CarsController < ApplicationController
           car[:power],
           car[:fuel],
           car[:emission],
+          car[:num_owners],
           car[:num_seats],
           car[:door_count],
           car[:transmission],
@@ -91,6 +92,7 @@ class CarsController < ApplicationController
           car[:first_registration],
           car[:hu],
           car[:climatisation],
+          car[:construction_year],
           car[:park_assist],
           car[:airbag],
           car[:manufacturer_color_name],
@@ -108,9 +110,6 @@ class CarsController < ApplicationController
           car["image_10"],
           car["image_11"],
           car["image_12"],
-          car["image_13"],
-          car["image_14"],
-          car["image_15"],
           car[:features],
           car[:dealer_name],
           car[:dealer_postal_code],
@@ -118,6 +117,7 @@ class CarsController < ApplicationController
           car[:dealer_address],
           car[:dealer_phone],
           car[:dealer_rating],
+          car[:dealer_quantity_ratings],
           car[:publishing_date]
         ]
       end
@@ -163,24 +163,23 @@ class CarsController < ApplicationController
     # sleep(1)
     # click_button("qssub")
     # sleep(2)
-    visit('https://suchen.mobile.de/fahrzeuge/search.html?adLimitation=ONLY_DEALER_ADS&cn=DE&damageUnrepaired=NO_DAMAGE_UNREPAIRED&features=FULL_SERVICE_HISTORY&features=NONSMOKER_VEHICLE&features=WARRANTY&fuels=PETROL&gn=Hamburg&isSearchRequest=true&ll=53.553341%2C9.99244&maxMileage=100000&maxPowerAsArray=PS&minFirstRegistrationDate=2010&minPowerAsArray=PS&rd=50&readyToDrive=ONLY_READY_TO_DRIVE&scopeId=C&sfmr=false&usage=USED&withImage=true')
+    visit('https://suchen.mobile.de/fahrzeuge/search.html?adLimitation=ONLY_DEALER_ADS&categories=Cabrio&categories=EstateCar&categories=Limousine&categories=OffRoad&categories=SmallCar&categories=SportsCar&categories=Van&cn=DE&damageUnrepaired=NO_DAMAGE_UNREPAIRED&features=FULL_SERVICE_HISTORY&features=NONSMOKER_VEHICLE&features=WARRANTY&fuels=PETROL&gn=M%C3%BCnchen%2C+Bayern&isSearchRequest=true&ll=48.13641%2C11.57752&maxMileage=80000&maxPowerAsArray=PS&maxPrice=60000&minFirstRegistrationDate=2011&minPowerAsArray=PS&rd=50&readyToDrive=ONLY_READY_TO_DRIVE&scopeId=C&sfmr=false&usage=USED&withImage=true')
     sleep(1)
     # Inseratdatum!!!!
-    # visit("#{find('#so-sb > option:nth-child(9)')['data-url']}")
+    visit("#{find('#so-sb > option:nth-child(9)')['data-url']}")
     cars = []
     j = 2
+    i = 0
     # Code
     # Handle Error
-    until j == 10
+    until j == 3
       q = all('.page-centered .viewport .g-row .g-col-9 .cBox--resultList .cBox-body--resultitem .result-item').map { |a| a['href'] }
       # Inseratdatum
-      # publishing_dates = all('#z1234 > div.viewport > div > div:nth-child(3) > div:nth-child(4) > div.g-col-9 > div:nth-child(3) > div.cBox-body.cBox-body--resultitem.dealerAd.rbt-reg.rbt-no-top > a > div > div.g-col-9 > div:nth-child(1) > div.g-col-8 > div > span.u-block.u-pad-top-9.rbt-onlineSince').map { |a| a.text }
+      publishing_dates = all('#z1234 > div.viewport > div > div:nth-child(3) > div:nth-child(4) > div.g-col-9 > div:nth-child(3) > div.cBox-body.cBox-body--resultitem.dealerAd.rbt-reg.rbt-no-top > a > div > div.g-col-9 > div:nth-child(1) > div.g-col-8 > div > span.u-block.u-pad-top-9.rbt-onlineSince').map { |a| a.text }
       q.each do |ad|
         begin
           visit(ad)
           car = Hash.new
-          # # Inseratdatum!!!!
-          # # car.publishing_date = publishing_dates[i]
           if has_css?('#rbt-envkv\.consumption-v > div.u-margin-bottom-9')
             consumptions = all('#rbt-envkv\.consumption-v > div.u-margin-bottom-9').map { |c| c.text }
             car[:consumption] = consumptions.join("\n")
@@ -202,10 +201,14 @@ class CarsController < ApplicationController
           end
           find('#standard-overlay-image-gallery-container > div:nth-child(2) > div > div > span').click
           car[:title] = find('#rbt-ad-title').text
-          car[:price] = find('#rbt-pt-v').text.match(/\d+.\d+/)[0].sub('.', '')
+          car[:price] = find('#rbt-pt-v').text.match(/\d+.\d+\s./)
+          #[0].sub('.', '')
           # Define variable to save time
           if has_css?('#rbt-damageCondition-v')
             car[:damage_condition] = find('#rbt-damageCondition-v').text
+          end
+          if has_css=('#rbt-countryVersion-v')
+            car[:country_version] = find('#rbt-countryVersion-v').text
           end
           if has_css?('#rbt-category-v')
             car[:category] = find('#rbt-category-v').text
@@ -216,8 +219,11 @@ class CarsController < ApplicationController
           end
           car[:power] = find('#rbt-power-v').text
           car[:fuel] = find('#rbt-fuel-v').text
-          if has_css?('#rbt-envkv.emission-v')
-            car[:emission] = find('#rbt-envkv.emission-v').text
+          if has_css?('#rbt-envkv\.emission-v')
+            car[:emission] = find('#rbt-envkv\.emission-v').text
+          end
+          if has_css?('#rbt-numberOfPreviousOwners-v')
+            car[:num_owners] = find('#rbt-numberOfPreviousOwners-v').text
           end
           if has_css?('#rbt-numSeats-v')
             car[:num_seats] = find('#rbt-numSeats-v').text
@@ -243,6 +249,9 @@ class CarsController < ApplicationController
           if has_css?('#rbt-climatisation-v')
             car[:climatisation] = find('#rbt-climatisation-v').text
           end
+          if has_css?('#rbt-constructionYear-v')
+            car[:construction_year] = find('#rbt-constructionYear-v').text
+          end
           if has_css?('#rbt-parkAssists-v')
             car[:park_assist] = find('#rbt-parkAssists-v').text
           end
@@ -266,10 +275,13 @@ class CarsController < ApplicationController
           car[:dealer_phone] = find('#rbt-seller-phone').text.sub('Tel.: ','')
           if has_css?('#rbt-top-dealer-info > div > div > span > a > span.star-rating-s.u-valign-middle.u-margin-right-9')
             car[:dealer_rating] = find('#rbt-top-dealer-info > div > div > span > a > span.star-rating-s.u-valign-middle.u-margin-right-9')['data-rating']
+            car[:dealer_quantity_ratings] = find('#rbt-top-dealer-info > div > div > span > a > span.amount-of-ratings').text
           end
           features = all('#rbt-features > div > div.g-col-6 > div.bullet-list > p').map { |p| p.text }
           car[:features] = features.join("\n")
+          car[:publishing_date] = publishing_dates[i].match(/\d{2}.\d{2}.\d{4}/)
           cars.push(car)
+          i += 1
         rescue => e
           next
         end
