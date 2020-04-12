@@ -6,6 +6,7 @@ class CreateCars < ActiveRecord::Migration[5.2]
       t.string :damage_condition
       t.string :category
       t.string :country_version
+      t.string :consumption
       t.string :mileage
       t.string :cubic_capacity
       t.string :power
@@ -25,12 +26,15 @@ class CreateCars < ActiveRecord::Migration[5.2]
       t.string :color
       t.string :interior
       t.string :image_one
-      t.string :image_one
       t.string :image_two
       t.string :image_three
       t.string :image_four
       t.string :image_five
       t.string :image_six
+      t.string :image_seven
+      t.string :image_eight
+      t.string :image_nine
+      t.string :image_ten
       t.string :features
       t.string :dealer_name
       t.string :dealer_postal_code
