@@ -26,7 +26,6 @@ class CreateCars < ActiveRecord::Migration[5.2]
       t.string :color
       t.string :interior
       t.string :image_one
-      t.string :image_one
       t.string :image_two
       t.string :image_three
       t.string :image_four
