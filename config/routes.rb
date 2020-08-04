@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'cars#new'
   resources :cars, only: [:new, :index, :create, :destroy]
   get '/form', to: "cars#form", as: :form
+  resources :car_dealers, only: [:new, :index, :create, :destroy]
 end
