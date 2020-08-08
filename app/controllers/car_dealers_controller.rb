@@ -16,7 +16,7 @@ class CarDealersController < ApplicationController
 
   def create
     @car_dealer = CarDealer.new
-    cars = scraper(@car, car_params[:url_path])
+    scraper(car_params[:url_path])
   end
 
   def destroy
@@ -97,9 +97,10 @@ class CarDealersController < ApplicationController
   end
 
   def scraper(url_path)
+    dealer_url = url_path.gsub('https://home.mobile.de/', '').gsub('#ses', '')
     # open csv file
     csv_options = { col_sep: ',' }
-    filepath    = Rails.root.join('lib', 'data', 'koch-marzahn.csv')
+    filepath    = Rails.root.join('lib', 'data', "#{DateTime.now.strftime("%Y-%m-%d-%k:%M")}_#{dealer_url}.csv")
     # write headline csv
     CSV.open(filepath, 'wb', csv_options) do |csv|
       csv << [
@@ -169,6 +170,8 @@ class CarDealersController < ApplicationController
         'Image Position',
         'Image Src',
         'Image Position',
+        'Image Src',
+        'Image Position',
         'Image Alt Text',
         'Gift Card','SEO Title','SEO Description','Google Shopping / Google Product Category','Google Shopping / Gender','Google Shopping / Age Group','Google Shopping / MPN','Google Shopping / AdWords Grouping','Google Shopping / AdWords Labels','Google Shopping / Condition','Google Shopping / Custom Product','Google Shopping / Custom Label 0','Google Shopping / Custom Label 1','Google Shopping / Custom Label 2','Google Shopping / Custom Label 3','Google Shopping / Custom Label 4','Variant Image','Variant Weight Unit','Variant Tax Code','Cost per item'
       ]
@@ -180,7 +183,7 @@ class CarDealersController < ApplicationController
     Capybara.default_max_wait_time = 3
     Capybara.raise_server_errors = false
     begin
-      visit('https://home.mobile.de/AH-SCHACHTSCHNEIDER#ses')
+      visit(url_path)
     rescue Net::ReadTimeout
     end
     sleep(2)
@@ -199,7 +202,7 @@ class CarDealersController < ApplicationController
     q = all('#ses > div.ses > ul > li').map { |a| a['id'] }
     q.each do |id|
       # visit car view page
-      visit("https://home.mobile.de/AH-SCHACHTSCHNEIDER#des_#{id}")
+      visit("https://home.mobile.de/#{dealer_url}#des_#{id}")
       sleep(1)
       # create new hash car
       car = Hash.new
@@ -211,6 +214,7 @@ class CarDealersController < ApplicationController
         car["Leistung"] = attributes.match(/\d*\skW\s.\d*\sPS./)[0]
         car["Kraftstoffart"] = attributes.match(/(Benzin|Diesel|Elektro|Erdgas)/)[0]
         car["Preis"] = find('#des > div.des > div > div.vehicleMainInfo.right > div.vehiclePrice > strong').text.gsub(' Brutto', '')
+        car["Kategorie"] = all('#des > div.des > div > div.vehicleMainInfo.right > div.vehicleAttributes > div.left > strong')[0].text
         begin
           car["Erstzulassung"] = attributes.match(/\d{2}.\d{4}/)[0]
         rescue NoMethodError
@@ -220,9 +224,20 @@ class CarDealersController < ApplicationController
         km_stand = car["Kilometerstand"].gsub(/[^\d]/,'').to_i
         power = car["Leistung"].match(/^\d*/)[0].to_i
         price = car["Preis"].gsub(/[^\d]/,'').to_i
-        if km_stand < 60000 && km_stand > 10000 && price < 30000 && power < 210 && car["Kraftstoffart"].match?(/(Diesel|Benzin)/)
+
+        if  km_stand < 60000 && km_stand > 10000 && price < 30000 && power < 210 &&
+            car["Kraftstoffart"].match?(/(Diesel|Benzin)/) &&
+            car["Kategorie"].match?(/(SUV|Kleinwagen|Kombi|Sportwagen|Limousine)/)
+
+          find('#sliderSmall > div.sliderDiv.es-carousel > ul > li:nth-child(2) > div > a > img').click
           # click on image
-          find('#gallerySmall > div.galleryWrapper.desCarousel.image-gallery-wrapper > div.imageView.flexslider.mainImage > div > ul > li.slide.Small.flex-active-slide > div', visible:false).click
+          begin
+            find('#gallerySmall > div.galleryWrapper.desCarousel.image-gallery-wrapper > div.imageView.flexslider.mainImage > div > ul > li.slide.Small.flex-active-slide > div', visible:false).click
+          rescue Selenium::WebDriver::Error::ElementNotInteractableError
+            puts "ElementNotInteractableError"
+            find('#sliderSmall > div.sliderDiv.es-carousel > ul > li:nth-child(3) > div > a > img').click
+            find('#gallerySmall > div.galleryWrapper.desCarousel.image-gallery-wrapper > div.imageView.flexslider.mainImage > div > ul > li.slide.Small.flex-active-slide > div', visible:false).click
+          end
           # find all image links
           img = find('#galleryLarge > div > div.imageView.flexslider.mainImage.modalBox > div > ul').all('li div img', visible: false).map { |e| e['src'] }
           # assign all image links to hash
@@ -232,29 +247,41 @@ class CarDealersController < ApplicationController
             i += 1
           end
           # image position holder csv
-          j = 1
-          20.times do
+          j = 0
+          22.times do
             if car["Bild_#{j}"]
               car["Bild_index_#{j}"] = j
               j += 1
             end
           end
-          find('#galleryLarge > div > div.imageView.flexslider.mainImage.modalBox > div > ul > li.slide.Large.flex-active-slide > div > img', visible: false).click
+          begin
+            find('#galleryLarge > div > div.imageView.flexslider.mainImage.modalBox > div > ul > li.slide.Large.flex-active-slide > div > img', visible: false).click
+          rescue  Selenium::WebDriver::Error::ElementNotInteractableError
+            sleep(1)
 
+            find('#galleryLarge > div > div.imageView.flexslider.mainImage.modalBox > div > ul > li.slide.Large.flex-active-slide > div > img', visible: false).click
+          end
           # assign data to hash
 
-          car["Kategorie"] = all('#des > div.des > div > div.vehicleMainInfo.right > div.vehicleAttributes > div.left > strong')[0].text
           car["Titel"] = find('#des > div.des > h3').text
-          car["Herkunft"] = find('#des > div.des > div > div.vehicleMainInfo.right > div.vehicleAttributes > div.left > span.countryVersion').text
           begin
             car["Fahrzeugzustand"] = find('#des > div.des > div > div.vehicleMainInfo.right > div.vehicleAttributes > div.left > span.damaged').text
           rescue Capybara::ElementNotFound
           end
+          begin
+            car["Herkunft"] = find('#des > div.des > div > div.vehicleMainInfo.right > div.vehicleAttributes > div.left > span.countryVersion').text
+          rescue Capybara::ElementNotFound
+          end
 
           car["Getriebe"] = attributes.match(/(Automatik|Schaltgetriebe)/)[0]
-          car["Verbrauch"] = find('#des > div.des > div > div.vehicleTechDetails.row-fluid > dl.fuelConsumption.span10 > dd:nth-child(2)').text.gsub(')',')<br>')
-          car["CO2-Emission"] = find('#des > div.des > div > div.vehicleTechDetails.row-fluid > dl.fuelConsumption.span10 > dd:nth-child(4)').text
-
+          begin
+            car["Verbrauch"] = find('#des > div.des > div > div.vehicleTechDetails.row-fluid > dl.fuelConsumption.span10 > dd:nth-child(2)').text.gsub(')',')<br>')
+          rescue Capybara::ElementNotFound
+          end
+          begin
+            car["CO2-Emission"] = find('#des > div.des > div > div.vehicleTechDetails.row-fluid > dl.fuelConsumption.span10 > dd:nth-child(4)').text
+          rescue Capybara::ElementNotFound
+          end
           # get additional data from text field
           headline = all('#des > div.des > div > div.vehicleTechDetails.row-fluid > dl.additionalAttributes.span10 > dt').map { |a| a.text }
           data = all('#des > div.des > div > div.vehicleTechDetails.row-fluid > dl.additionalAttributes.span10 > dd').map { |a| a.text }
@@ -282,7 +309,7 @@ class CarDealersController < ApplicationController
 
           # Assign data for import sheet shopify
           car['Vendor'] = car['Titel'].match(/^[A-Za-z-]*/)[0]
-          car['Title'] = car['Titel'].gsub(/[+&\/.;,()'_]/, ' ')
+          car['Title'] = car['Titel'].gsub(/[+&\/*;,()'_]/, ' ')
           car['Handle'] = "#{car['Title'].gsub(/\s/,'-')}"
           car['Dealer'] = find('#container > footer > div > div > div:nth-child(3) > address > strong').text
           car['Pickup_location'] = find('#container > footer > div > div > div:nth-child(3) > address > div.span12.addressData').text
@@ -661,10 +688,17 @@ class CarDealersController < ApplicationController
           # p += 1
           # break if p > 30
         end
-      rescue Capybara::ElementNotFound
+      # rescue Capybara::ElementNotFound
+      #   puts "ElementNotFound"
       rescue TypeError
+        puts "TypeError"
       rescue Selenium::WebDriver::Error::StaleElementReferenceError
+        puts "StaleElementReferenceError"
       rescue NoMethodError
+        puts "NoMethodError"
+      rescue Capybara::ElementNotFound
+        puts "Capybara::ElementNotFound"
+
       end
     end
     # # open csv file
