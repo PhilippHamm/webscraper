@@ -1,0 +1,516 @@
+Dealer name,Dealer adress,Purchase price,Reselling price,Handle,Title,Body (HTML),Vendor,Type,Tags,Published,Option1 Name,Option1 Value,Option2 Name,Option2 Value,Option3 Name,Option3 Value,Variant SKU,Variant Grams,Variant Inventory Tracker,Variant Inventory Qty,Variant Inventory Policy,Variant Fulfillment Service,Variant Price,Variant Compare At Price,Variant Requires Shipping,Variant Taxable,Variant Barcode,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Src,Image Position,Image Alt Text,Gift Card,SEO Title,SEO Description,Google Shopping / Google Product Category,Google Shopping / Gender,Google Shopping / Age Group,Google Shopping / MPN,Google Shopping / AdWords Grouping,Google Shopping / AdWords Labels,Google Shopping / Condition,Google Shopping / Custom Product,Google Shopping / Custom Label 0,Google Shopping / Custom Label 1,Google Shopping / Custom Label 2,Google Shopping / Custom Label 3,Google Shopping / Custom Label 4,Variant Image,Variant Weight Unit,Variant Tax Code,Cost per item
+Schachtschneider Automobile e.K.,"Ulmenstr. 4
+14482 Potsdam
+Deutschland",10490,10368,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,Opel Adam 1.2 GNTM Klima PDC Sitzheizung IntelliLink ,"<p>
+<strong>Abholadresse</strong>
+Ulmenstr. 4
+14482 Potsdam
+Deutschland<br>
+<strong>Fahrzeugzustand</strong>
+Unfallfrei<br>
+<strong>Kategorie</strong>
+Kleinwagen<br>
+<strong>Herkunft</strong>
+Deutsche Ausführung<br>
+<strong>Kilometerstand</strong>
+21.826 km<br>
+<strong>Hubraum</strong>
+1.229 cm³<br>
+<strong>Leistung</strong>
+51 kW (69 PS)<br>
+<strong>Kraftstoffart</strong>
+Benzin<br>
+<strong>Verbrauch</strong><br>
+ca. 5,3 l/100km (kombiniert)<br>
+ca. 7,2 l/100km (innerorts)<br>
+ca. 4,3 l/100km (außerorts)<br>
+<strong>CO2-Emission</strong>
+ca. 125 g/km (kombiniert)<br>
+<strong>Anzahl der Türen</strong>
+2/3<br>
+<strong>Anzahl Sitzplätze</strong>
+4<br>
+<strong>Getriebe</strong>
+Schaltgetriebe<br>
+<strong>Schadstoffklasse</strong>
+Euro6<br>
+<strong>Umweltplakette</strong>
+4 (Grün)<br>
+<strong>Erstzulassung</strong>
+04/2017<br>
+<strong>Anzahl der Fahrzeughalter</strong>
+2<br>
+<strong>HU</strong>
+Neu<br>
+<strong>Klimatisierung</strong>
+Klimaanlage<br>
+<strong>Farbe (Hersteller)</strong>
+Onyx Black Metallic<br>
+<strong>Farbe</strong>
+Schwarz Metallic<br>
+<strong>Innenausstattung</strong>
+Stoff, Schwarz<br>
+<strong>Weitere Eigenschaften</strong><br>
+ABS, Android Auto, Apple CarPlay, Beheizbares Lenkrad, Berganfahrassistent, Bluetooth, Bordcomputer, Elektr. Fensterheber, Elektr. Seitenspiegel, Elektr. Wegfahrsperre, ESP, Freisprecheinrichtung, Garantie, Isofix, Lederlenkrad, Leichtmetallfelgen, Multifunktionslenkrad, Notrufsystem, Pannenkit, Reifendruckkontrolle, Scheckheftgepflegt, Servolenkung, Sitzheizung, Sportfahrwerk, Sprachsteuerung, Tagfahrlicht, Tempomat, Touchscreen, Traktionskontrolle, Tuner/Radio, USB, WLAN / Wifi Hotspot, Zentralverriegelung
+</p>",Opel,,"Marke_Opel, Typ_Kleinwagen, Alter_maximal 5 Jahre,Alter_Alle, Kilometerstand_maximal 50.000 km,Kilometerstand_maximal 80.000 km,Kilometerstand_maximal 100.000 km, Leistung_bis 70 PS,Leistung_Alle, Schaltung_Schaltgetriebe, Farbe_Schwarz, Kraftstoff_Benzin, Zustand_Gebraucht, Preis_Mittel (200 bis 400 €)",WAHR,Deine Abo Dauer,3 Monate,Dein monatliches Kilometerpaket,500 km,,,ADA,0,,0,deny,manual,386,,FALSCH,WAHR,,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/5McAAOSw2ZRfEEdc/$_27.JPG,1,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/99wAAOSwhHVfEEdc/$_27.JPG,2,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/LUsAAOSwfs5fEEdc/$_27.JPG,3,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/FZoAAOSwk1VfEEdc/$_27.JPG,4,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/LnEAAOSwGzdfEEdc/$_27.JPG,5,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/LIwAAOSw3j9fEEdd/$_27.JPG,6,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/pOEAAOSwqCZfEEdc/$_27.JPG,7,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/-ZgAAOSw6flfEEdc/$_27.JPG,8,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/Oi8AAOSwXWJfEEdd/$_27.JPG,9,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/XnoAAOSwq1xfEEdc/$_27.JPG,10,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/JR0AAOSwOZZfEEdc/$_27.JPG,11,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/OWYAAOSwhCFfEEdc/$_27.JPG,12,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/QG8AAOSw3t5fEEdc/$_27.JPG,13,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/JEcAAOSwyJRfEEdd/$_27.JPG,14,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/2YkAAOSwEV1fEEdc/$_27.JPG,15,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/VCYAAOSw6DtfEEdc/$_27.JPG,16,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/yCcAAOSwu9dfEEdc/$_27.JPG,17,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/0EMAAOSwcGxfEEdc/$_27.JPG,18,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/qlsAAOSwTodfEEdd/$_27.JPG,19,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/5McAAOSw2ZRfEEdc/$_27.JPG,20,,,nil
+,,,10348,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,3 Monate,,1000 km,,,ADA,0,,0,deny,manual,405,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,3 Monate,,1500 km,,,ADA,0,,0,deny,manual,424,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,3 Monate,,2000 km,,,ADA,0,,0,deny,manual,443,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,3 Monate,,2500 km,,,ADA,0,,0,deny,manual,463,,FALSCH,WAHR
+,,,10368,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,4 Monate,,500 km,,,ADA,0,,0,deny,manual,366,,FALSCH,WAHR
+,,,10348,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,4 Monate,,1000 km,,,ADA,0,,0,deny,manual,385,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,4 Monate,,1500 km,,,ADA,0,,0,deny,manual,404,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,4 Monate,,2000 km,,,ADA,0,,0,deny,manual,424,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,4 Monate,,2500 km,,,ADA,0,,0,deny,manual,443,,FALSCH,WAHR
+,,,10368,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,5 Monate,,500 km,,,ADA,0,,0,deny,manual,354,,FALSCH,WAHR
+,,,10348,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,5 Monate,,1000 km,,,ADA,0,,0,deny,manual,373,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,5 Monate,,1500 km,,,ADA,0,,0,deny,manual,392,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,5 Monate,,2000 km,,,ADA,0,,0,deny,manual,412,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,5 Monate,,2500 km,,,ADA,0,,0,deny,manual,431,,FALSCH,WAHR
+,,,10368,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,6 Monate,,500 km,,,ADA,0,,0,deny,manual,346,,FALSCH,WAHR
+,,,10348,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,6 Monate,,1000 km,,,ADA,0,,0,deny,manual,365,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,6 Monate,,1500 km,,,ADA,0,,0,deny,manual,384,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,6 Monate,,2000 km,,,ADA,0,,0,deny,manual,404,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,6 Monate,,2500 km,,,ADA,0,,0,deny,manual,441,,FALSCH,WAHR
+,,,10368,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,7 Monate,,500 km,,,ADA,0,,0,deny,manual,356,,FALSCH,WAHR
+,,,10348,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,7 Monate,,1000 km,,,ADA,0,,0,deny,manual,375,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,7 Monate,,1500 km,,,ADA,0,,0,deny,manual,394,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,7 Monate,,2000 km,,,ADA,0,,0,deny,manual,414,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,7 Monate,,2500 km,,,ADA,0,,0,deny,manual,433,,FALSCH,WAHR
+,,,10368,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,8 Monate,,500 km,,,ADA,0,,0,deny,manual,350,,FALSCH,WAHR
+,,,10348,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,8 Monate,,1000 km,,,ADA,0,,0,deny,manual,369,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,8 Monate,,1500 km,,,ADA,0,,0,deny,manual,388,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,8 Monate,,2000 km,,,ADA,0,,0,deny,manual,407,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,8 Monate,,2500 km,,,ADA,0,,0,deny,manual,427,,FALSCH,WAHR
+,,,10368,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,9 Monate,,500 km,,,ADA,0,,0,deny,manual,345,,FALSCH,WAHR
+,,,10348,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,9 Monate,,1000 km,,,ADA,0,,0,deny,manual,364,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,9 Monate,,1500 km,,,ADA,0,,0,deny,manual,383,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,9 Monate,,2000 km,,,ADA,0,,0,deny,manual,403,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,9 Monate,,2500 km,,,ADA,0,,0,deny,manual,422,,FALSCH,WAHR
+,,,10368,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,10 Monate,,500 km,,,ADA,0,,0,deny,manual,341,,FALSCH,WAHR
+,,,10348,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,10 Monate,,1000 km,,,ADA,0,,0,deny,manual,360,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,10 Monate,,1500 km,,,ADA,0,,0,deny,manual,379,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,10 Monate,,2000 km,,,ADA,0,,0,deny,manual,399,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,10 Monate,,2500 km,,,ADA,0,,0,deny,manual,418,,FALSCH,WAHR
+,,,10368,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,11 Monate,,500 km,,,ADA,0,,0,deny,manual,338,,FALSCH,WAHR
+,,,10348,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,11 Monate,,1000 km,,,ADA,0,,0,deny,manual,357,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,11 Monate,,1500 km,,,ADA,0,,0,deny,manual,376,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,11 Monate,,2000 km,,,ADA,0,,0,deny,manual,396,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,11 Monate,,2500 km,,,ADA,0,,0,deny,manual,415,,FALSCH,WAHR
+,,,10368,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,12 Monate,,500 km,,,ADA,0,,0,deny,manual,335,,FALSCH,WAHR
+,,,10348,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,12 Monate,,1000 km,,,ADA,0,,0,deny,manual,354,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,12 Monate,,1500 km,,,ADA,0,,0,deny,manual,374,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,12 Monate,,2000 km,,,ADA,0,,0,deny,manual,393,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.2-GNTM-Klima-PDC-Sitzheizung-IntelliLink-,,,,,,,,12 Monate,,2500 km,,,ADA,0,,0,deny,manual,412,,FALSCH,WAHR
+Schachtschneider Automobile e.K.,"Ulmenstr. 4
+14482 Potsdam
+Deutschland",9390,9281,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,Opel Adam 1.2 Jam IntelliLink USB Bluetooth Klima,"<p>
+<strong>Abholadresse</strong>
+Ulmenstr. 4
+14482 Potsdam
+Deutschland<br>
+<strong>Fahrzeugzustand</strong>
+Unfallfrei<br>
+<strong>Kategorie</strong>
+Kleinwagen<br>
+<strong>Herkunft</strong>
+Deutsche Ausführung<br>
+<strong>Kilometerstand</strong>
+17.441 km<br>
+<strong>Hubraum</strong>
+1.229 cm³<br>
+<strong>Leistung</strong>
+51 kW (69 PS)<br>
+<strong>Kraftstoffart</strong>
+Benzin<br>
+<strong>Verbrauch</strong><br>
+ca. 5,3 l/100km (kombiniert)<br>
+ca. 7,3 l/100km (innerorts)<br>
+ca. 4,3 l/100km (außerorts)<br>
+<strong>CO2-Emission</strong>
+ca. 125 g/km (kombiniert)<br>
+<strong>Anzahl der Türen</strong>
+2/3<br>
+<strong>Anzahl Sitzplätze</strong>
+4<br>
+<strong>Getriebe</strong>
+Schaltgetriebe<br>
+<strong>Schadstoffklasse</strong>
+Euro6<br>
+<strong>Umweltplakette</strong>
+4 (Grün)<br>
+<strong>Erstzulassung</strong>
+08/2016<br>
+<strong>Anzahl der Fahrzeughalter</strong>
+2<br>
+<strong>HU</strong>
+Neu<br>
+<strong>Klimatisierung</strong>
+Klimaanlage<br>
+<strong>Farbe (Hersteller)</strong>
+Lilac Silver<br>
+<strong>Farbe</strong>
+Silber Metallic<br>
+<strong>Innenausstattung</strong>
+Stoff, Schwarz<br>
+<strong>Weitere Eigenschaften</strong><br>
+ABS, Android Auto, Apple CarPlay, Berganfahrassistent, Bluetooth, Bordcomputer, Elektr. Fensterheber, Elektr. Seitenspiegel, Elektr. Wegfahrsperre, ESP, Freisprecheinrichtung, Garantie, Isofix, Lederlenkrad, Leichtmetallfelgen, Multifunktionslenkrad, Pannenkit, Reifendruckkontrolle, Scheckheftgepflegt, Servolenkung, Sprachsteuerung, Tagfahrlicht, Tempomat, Touchscreen, Traktionskontrolle, Tuner/Radio, USB, Zentralverriegelung
+</p>",Opel,,"Marke_Opel, Typ_Kleinwagen, Alter_maximal 5 Jahre,Alter_Alle, Kilometerstand_maximal 20.000 km,Kilometerstand_maximal 50.000 km,Kilometerstand_maximal 80.000 km,Kilometerstand_maximal 100.000 km, Leistung_bis 70 PS,Leistung_Alle, Schaltung_Schaltgetriebe, Farbe_Silber, Kraftstoff_Benzin, Zustand_Gebraucht, Preis_Mittel (200 bis 400 €)",WAHR,Deine Abo Dauer,3 Monate,Dein monatliches Kilometerpaket,500 km,,,ADA,0,,0,deny,manual,368,,FALSCH,WAHR,,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/7bIAAOSw8nlfGtW5/$_27.JPG,1,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/OQMAAOSwYaNfGtW5/$_27.JPG,2,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/tp0AAOSwu~5fGtW5/$_27.JPG,3,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/OrcAAOSwGVNfGtW5/$_27.JPG,4,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/qg4AAOSwQwRfGtW5/$_27.JPG,5,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/iMcAAOSw9B9fGtW5/$_27.JPG,6,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/iJMAAOSwBLNfGtW5/$_27.JPG,7,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/PS0AAOSwdytfGtW5/$_27.JPG,8,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/9C8AAOSwHfpfGtW5/$_27.JPG,9,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/d64AAOSwvCtfGtW5/$_27.JPG,10,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/nsEAAOSwoRtfGtW5/$_27.JPG,11,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/7bIAAOSw8nlfGtW5/$_27.JPG,12,,,,,,,,,,,,,,,,,,,nil
+,,,9263,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,3 Monate,,1000 km,,,ADA,0,,0,deny,manual,385,,FALSCH,WAHR
+,,,9245,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,3 Monate,,1500 km,,,ADA,0,,0,deny,manual,402,,FALSCH,WAHR
+,,,9227,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,3 Monate,,2000 km,,,ADA,0,,0,deny,manual,419,,FALSCH,WAHR
+,,,9208,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,3 Monate,,2500 km,,,ADA,0,,0,deny,manual,437,,FALSCH,WAHR
+,,,9281,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,4 Monate,,500 km,,,ADA,0,,0,deny,manual,348,,FALSCH,WAHR
+,,,9263,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,4 Monate,,1000 km,,,ADA,0,,0,deny,manual,365,,FALSCH,WAHR
+,,,9245,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,4 Monate,,1500 km,,,ADA,0,,0,deny,manual,382,,FALSCH,WAHR
+,,,9227,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,4 Monate,,2000 km,,,ADA,0,,0,deny,manual,399,,FALSCH,WAHR
+,,,9208,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,4 Monate,,2500 km,,,ADA,0,,0,deny,manual,417,,FALSCH,WAHR
+,,,9281,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,5 Monate,,500 km,,,ADA,0,,0,deny,manual,336,,FALSCH,WAHR
+,,,9263,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,5 Monate,,1000 km,,,ADA,0,,0,deny,manual,353,,FALSCH,WAHR
+,,,9245,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,5 Monate,,1500 km,,,ADA,0,,0,deny,manual,370,,FALSCH,WAHR
+,,,9227,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,5 Monate,,2000 km,,,ADA,0,,0,deny,manual,388,,FALSCH,WAHR
+,,,9208,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,5 Monate,,2500 km,,,ADA,0,,0,deny,manual,405,,FALSCH,WAHR
+,,,9281,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,6 Monate,,500 km,,,ADA,0,,0,deny,manual,328,,FALSCH,WAHR
+,,,9263,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,6 Monate,,1000 km,,,ADA,0,,0,deny,manual,345,,FALSCH,WAHR
+,,,9245,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,6 Monate,,1500 km,,,ADA,0,,0,deny,manual,362,,FALSCH,WAHR
+,,,9227,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,6 Monate,,2000 km,,,ADA,0,,0,deny,manual,380,,FALSCH,WAHR
+,,,9208,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,6 Monate,,2500 km,,,ADA,0,,0,deny,manual,415,,FALSCH,WAHR
+,,,9281,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,7 Monate,,500 km,,,ADA,0,,0,deny,manual,338,,FALSCH,WAHR
+,,,9263,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,7 Monate,,1000 km,,,ADA,0,,0,deny,manual,355,,FALSCH,WAHR
+,,,9245,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,7 Monate,,1500 km,,,ADA,0,,0,deny,manual,372,,FALSCH,WAHR
+,,,9227,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,7 Monate,,2000 km,,,ADA,0,,0,deny,manual,390,,FALSCH,WAHR
+,,,9208,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,7 Monate,,2500 km,,,ADA,0,,0,deny,manual,407,,FALSCH,WAHR
+,,,9281,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,8 Monate,,500 km,,,ADA,0,,0,deny,manual,332,,FALSCH,WAHR
+,,,9263,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,8 Monate,,1000 km,,,ADA,0,,0,deny,manual,349,,FALSCH,WAHR
+,,,9245,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,8 Monate,,1500 km,,,ADA,0,,0,deny,manual,366,,FALSCH,WAHR
+,,,9227,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,8 Monate,,2000 km,,,ADA,0,,0,deny,manual,383,,FALSCH,WAHR
+,,,9208,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,8 Monate,,2500 km,,,ADA,0,,0,deny,manual,401,,FALSCH,WAHR
+,,,9281,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,9 Monate,,500 km,,,ADA,0,,0,deny,manual,327,,FALSCH,WAHR
+,,,9263,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,9 Monate,,1000 km,,,ADA,0,,0,deny,manual,344,,FALSCH,WAHR
+,,,9245,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,9 Monate,,1500 km,,,ADA,0,,0,deny,manual,361,,FALSCH,WAHR
+,,,9227,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,9 Monate,,2000 km,,,ADA,0,,0,deny,manual,379,,FALSCH,WAHR
+,,,9208,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,9 Monate,,2500 km,,,ADA,0,,0,deny,manual,396,,FALSCH,WAHR
+,,,9281,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,10 Monate,,500 km,,,ADA,0,,0,deny,manual,323,,FALSCH,WAHR
+,,,9263,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,10 Monate,,1000 km,,,ADA,0,,0,deny,manual,340,,FALSCH,WAHR
+,,,9245,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,10 Monate,,1500 km,,,ADA,0,,0,deny,manual,357,,FALSCH,WAHR
+,,,9227,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,10 Monate,,2000 km,,,ADA,0,,0,deny,manual,375,,FALSCH,WAHR
+,,,9208,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,10 Monate,,2500 km,,,ADA,0,,0,deny,manual,392,,FALSCH,WAHR
+,,,9281,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,11 Monate,,500 km,,,ADA,0,,0,deny,manual,320,,FALSCH,WAHR
+,,,9263,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,11 Monate,,1000 km,,,ADA,0,,0,deny,manual,337,,FALSCH,WAHR
+,,,9245,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,11 Monate,,1500 km,,,ADA,0,,0,deny,manual,354,,FALSCH,WAHR
+,,,9227,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,11 Monate,,2000 km,,,ADA,0,,0,deny,manual,371,,FALSCH,WAHR
+,,,9208,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,11 Monate,,2500 km,,,ADA,0,,0,deny,manual,389,,FALSCH,WAHR
+,,,9281,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,12 Monate,,500 km,,,ADA,0,,0,deny,manual,317,,FALSCH,WAHR
+,,,9263,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,12 Monate,,1000 km,,,ADA,0,,0,deny,manual,334,,FALSCH,WAHR
+,,,9245,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,12 Monate,,1500 km,,,ADA,0,,0,deny,manual,352,,FALSCH,WAHR
+,,,9227,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,12 Monate,,2000 km,,,ADA,0,,0,deny,manual,369,,FALSCH,WAHR
+,,,9208,Opel-Adam-1.2-Jam-IntelliLink-USB-Bluetooth-Klima,,,,,,,,12 Monate,,2500 km,,,ADA,0,,0,deny,manual,386,,FALSCH,WAHR
+Schachtschneider Automobile e.K.,"Ulmenstr. 4
+14482 Potsdam
+Deutschland",9490,9380,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,Opel Adam 1.2 Open Air Faltdach Klima Bluetooth ,"<p>
+<strong>Abholadresse</strong>
+Ulmenstr. 4
+14482 Potsdam
+Deutschland<br>
+<strong>Fahrzeugzustand</strong>
+Unfallfrei<br>
+<strong>Kategorie</strong>
+Kleinwagen<br>
+<strong>Herkunft</strong>
+Deutsche Ausführung<br>
+<strong>Kilometerstand</strong>
+30.348 km<br>
+<strong>Hubraum</strong>
+1.229 cm³<br>
+<strong>Leistung</strong>
+51 kW (69 PS)<br>
+<strong>Kraftstoffart</strong>
+Benzin<br>
+<strong>Verbrauch</strong><br>
+ca. 5,3 l/100km (kombiniert)<br>
+ca. 7,3 l/100km (innerorts)<br>
+ca. 4,3 l/100km (außerorts)<br>
+<strong>CO2-Emission</strong>
+ca. 125 g/km (kombiniert)<br>
+<strong>Anzahl der Türen</strong>
+2/3<br>
+<strong>Anzahl Sitzplätze</strong>
+4<br>
+<strong>Getriebe</strong>
+Schaltgetriebe<br>
+<strong>Schadstoffklasse</strong>
+Euro6<br>
+<strong>Umweltplakette</strong>
+4 (Grün)<br>
+<strong>Erstzulassung</strong>
+04/2016<br>
+<strong>Anzahl der Fahrzeughalter</strong>
+2<br>
+<strong>HU</strong>
+04/2021<br>
+<strong>Klimatisierung</strong>
+Klimaanlage<br>
+<strong>Farbe (Hersteller)</strong>
+Arctic White<br>
+<strong>Farbe</strong>
+Weiß<br>
+<strong>Innenausstattung</strong>
+Teilleder, Schwarz<br>
+<strong>Weitere Eigenschaften</strong><br>
+ABS, Berganfahrassistent, Bluetooth, Bordcomputer, CD-Spieler, Elektr. Fensterheber, Elektr. Seitenspiegel, Elektr. Wegfahrsperre, ESP, Freisprecheinrichtung, Garantie, Isofix, Lederlenkrad, Leichtmetallfelgen, Multifunktionslenkrad, Nichtraucher-Fahrzeug, Pannenkit, Reifendruckkontrolle, Scheckheftgepflegt, Schiebedach, Servolenkung, Tagfahrlicht, Tempomat, Traktionskontrolle, Tuner/Radio, USB, Zentralverriegelung
+</p>",Opel,,"Marke_Opel, Typ_Kleinwagen, Alter_maximal 5 Jahre,Alter_Alle, Kilometerstand_maximal 50.000 km,Kilometerstand_maximal 80.000 km,Kilometerstand_maximal 100.000 km, Leistung_bis 70 PS,Leistung_Alle, Schaltung_Schaltgetriebe, Farbe_Weiß, Kraftstoff_Benzin, Zustand_Gebraucht, Preis_Mittel (200 bis 400 €)",WAHR,Deine Abo Dauer,3 Monate,Dein monatliches Kilometerpaket,500 km,,,ADA,0,,0,deny,manual,369,,FALSCH,WAHR,,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/1ywAAOSw7WBe9ajq/$_27.JPG,1,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/I~cAAOSw8zJe9ajq/$_27.JPG,2,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/jgEAAOSwKRte9ajr/$_27.JPG,3,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/npoAAOSwKThe9ajq/$_27.JPG,4,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/5cEAAOSwMTde9ajq/$_27.JPG,5,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/KKQAAOSwpZhe9ajr/$_27.JPG,6,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/96gAAOSwR6le9ajq/$_27.JPG,7,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/UJIAAOSwMVZe9ajr/$_27.JPG,8,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/Ir4AAOSwOahe9ajr/$_27.JPG,9,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/tu8AAOSwmMBe9ajq/$_27.JPG,10,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/zcQAAOSwS4he9ajq/$_27.JPG,11,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/W18AAOSw35Be9ajq/$_27.JPG,12,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/mGQAAOSwaYle9ajq/$_27.JPG,13,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/nTMAAOSwaL5e9ajq/$_27.JPG,14,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/JRkAAOSw1T1e9ajq/$_27.JPG,15,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/1ywAAOSw7WBe9ajq/$_27.JPG,16,,,,,,,,,,,nil
+,,,9362,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,3 Monate,,1000 km,,,ADA,0,,0,deny,manual,387,,FALSCH,WAHR
+,,,9343,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,3 Monate,,1500 km,,,ADA,0,,0,deny,manual,404,,FALSCH,WAHR
+,,,9325,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,3 Monate,,2000 km,,,ADA,0,,0,deny,manual,422,,FALSCH,WAHR
+,,,9307,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,3 Monate,,2500 km,,,ADA,0,,0,deny,manual,439,,FALSCH,WAHR
+,,,9380,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,4 Monate,,500 km,,,ADA,0,,0,deny,manual,349,,FALSCH,WAHR
+,,,9362,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,4 Monate,,1000 km,,,ADA,0,,0,deny,manual,367,,FALSCH,WAHR
+,,,9343,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,4 Monate,,1500 km,,,ADA,0,,0,deny,manual,384,,FALSCH,WAHR
+,,,9325,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,4 Monate,,2000 km,,,ADA,0,,0,deny,manual,402,,FALSCH,WAHR
+,,,9307,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,4 Monate,,2500 km,,,ADA,0,,0,deny,manual,419,,FALSCH,WAHR
+,,,9380,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,5 Monate,,500 km,,,ADA,0,,0,deny,manual,337,,FALSCH,WAHR
+,,,9362,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,5 Monate,,1000 km,,,ADA,0,,0,deny,manual,355,,FALSCH,WAHR
+,,,9343,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,5 Monate,,1500 km,,,ADA,0,,0,deny,manual,372,,FALSCH,WAHR
+,,,9325,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,5 Monate,,2000 km,,,ADA,0,,0,deny,manual,390,,FALSCH,WAHR
+,,,9307,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,5 Monate,,2500 km,,,ADA,0,,0,deny,manual,407,,FALSCH,WAHR
+,,,9380,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,6 Monate,,500 km,,,ADA,0,,0,deny,manual,329,,FALSCH,WAHR
+,,,9362,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,6 Monate,,1000 km,,,ADA,0,,0,deny,manual,347,,FALSCH,WAHR
+,,,9343,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,6 Monate,,1500 km,,,ADA,0,,0,deny,manual,364,,FALSCH,WAHR
+,,,9325,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,6 Monate,,2000 km,,,ADA,0,,0,deny,manual,382,,FALSCH,WAHR
+,,,9307,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,6 Monate,,2500 km,,,ADA,0,,0,deny,manual,418,,FALSCH,WAHR
+,,,9380,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,7 Monate,,500 km,,,ADA,0,,0,deny,manual,339,,FALSCH,WAHR
+,,,9362,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,7 Monate,,1000 km,,,ADA,0,,0,deny,manual,357,,FALSCH,WAHR
+,,,9343,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,7 Monate,,1500 km,,,ADA,0,,0,deny,manual,374,,FALSCH,WAHR
+,,,9325,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,7 Monate,,2000 km,,,ADA,0,,0,deny,manual,392,,FALSCH,WAHR
+,,,9307,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,7 Monate,,2500 km,,,ADA,0,,0,deny,manual,409,,FALSCH,WAHR
+,,,9380,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,8 Monate,,500 km,,,ADA,0,,0,deny,manual,333,,FALSCH,WAHR
+,,,9362,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,8 Monate,,1000 km,,,ADA,0,,0,deny,manual,351,,FALSCH,WAHR
+,,,9343,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,8 Monate,,1500 km,,,ADA,0,,0,deny,manual,368,,FALSCH,WAHR
+,,,9325,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,8 Monate,,2000 km,,,ADA,0,,0,deny,manual,386,,FALSCH,WAHR
+,,,9307,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,8 Monate,,2500 km,,,ADA,0,,0,deny,manual,403,,FALSCH,WAHR
+,,,9380,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,9 Monate,,500 km,,,ADA,0,,0,deny,manual,328,,FALSCH,WAHR
+,,,9362,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,9 Monate,,1000 km,,,ADA,0,,0,deny,manual,346,,FALSCH,WAHR
+,,,9343,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,9 Monate,,1500 km,,,ADA,0,,0,deny,manual,363,,FALSCH,WAHR
+,,,9325,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,9 Monate,,2000 km,,,ADA,0,,0,deny,manual,381,,FALSCH,WAHR
+,,,9307,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,9 Monate,,2500 km,,,ADA,0,,0,deny,manual,398,,FALSCH,WAHR
+,,,9380,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,10 Monate,,500 km,,,ADA,0,,0,deny,manual,324,,FALSCH,WAHR
+,,,9362,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,10 Monate,,1000 km,,,ADA,0,,0,deny,manual,342,,FALSCH,WAHR
+,,,9343,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,10 Monate,,1500 km,,,ADA,0,,0,deny,manual,359,,FALSCH,WAHR
+,,,9325,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,10 Monate,,2000 km,,,ADA,0,,0,deny,manual,377,,FALSCH,WAHR
+,,,9307,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,10 Monate,,2500 km,,,ADA,0,,0,deny,manual,394,,FALSCH,WAHR
+,,,9380,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,11 Monate,,500 km,,,ADA,0,,0,deny,manual,321,,FALSCH,WAHR
+,,,9362,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,11 Monate,,1000 km,,,ADA,0,,0,deny,manual,339,,FALSCH,WAHR
+,,,9343,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,11 Monate,,1500 km,,,ADA,0,,0,deny,manual,356,,FALSCH,WAHR
+,,,9325,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,11 Monate,,2000 km,,,ADA,0,,0,deny,manual,374,,FALSCH,WAHR
+,,,9307,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,11 Monate,,2500 km,,,ADA,0,,0,deny,manual,391,,FALSCH,WAHR
+,,,9380,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,12 Monate,,500 km,,,ADA,0,,0,deny,manual,319,,FALSCH,WAHR
+,,,9362,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,12 Monate,,1000 km,,,ADA,0,,0,deny,manual,336,,FALSCH,WAHR
+,,,9343,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,12 Monate,,1500 km,,,ADA,0,,0,deny,manual,354,,FALSCH,WAHR
+,,,9325,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,12 Monate,,2000 km,,,ADA,0,,0,deny,manual,371,,FALSCH,WAHR
+,,,9307,Opel-Adam-1.2-Open-Air-Faltdach-Klima-Bluetooth-,,,,,,,,12 Monate,,2500 km,,,ADA,0,,0,deny,manual,388,,FALSCH,WAHR
+Schachtschneider Automobile e.K.,"Ulmenstr. 4
+14482 Potsdam
+Deutschland",13890,13729,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,Opel Adam 1.4 120 Jahre IntelliLink Klimaaut PDC ,"<p>
+<strong>Abholadresse</strong>
+Ulmenstr. 4
+14482 Potsdam
+Deutschland<br>
+<strong>Fahrzeugzustand</strong>
+Unfallfrei<br>
+<strong>Kategorie</strong>
+Kleinwagen<br>
+<strong>Herkunft</strong>
+Deutsche Ausführung<br>
+<strong>Kilometerstand</strong>
+14.065 km<br>
+<strong>Hubraum</strong>
+1.398 cm³<br>
+<strong>Leistung</strong>
+64 kW (87 PS)<br>
+<strong>Kraftstoffart</strong>
+Benzin<br>
+<strong>Verbrauch</strong><br>
+ca. 5,6 l/100km (kombiniert)<br>
+ca. 7,0 l/100km (innerorts)<br>
+ca. 4,8 l/100km (außerorts)<br>
+<strong>CO2-Emission</strong>
+ca. 154 g/km (kombiniert)<br>
+<strong>Anzahl der Türen</strong>
+2/3<br>
+<strong>Anzahl Sitzplätze</strong>
+4<br>
+<strong>Getriebe</strong>
+Schaltgetriebe<br>
+<strong>Schadstoffklasse</strong>
+Euro6d-TEMP<br>
+<strong>Umweltplakette</strong>
+4 (Grün)<br>
+<strong>Erstzulassung</strong>
+04/2019<br>
+<strong>Anzahl der Fahrzeughalter</strong>
+1<br>
+<strong>HU</strong>
+Neu<br>
+<strong>Klimatisierung</strong>
+Klimaautomatik<br>
+<strong>Farbe (Hersteller)</strong>
+Berry Red Perleffekt<br>
+<strong>Farbe</strong>
+Rot Metallic<br>
+<strong>Innenausstattung</strong>
+Teilleder, Schwarz<br>
+<strong>Weitere Eigenschaften</strong><br>
+ABS, Allwetterreifen, Android Auto, Apple CarPlay, Beheizbares Lenkrad, Berganfahrassistent, Bluetooth, Bordcomputer, Elektr. Fensterheber, Elektr. Seitenspiegel, Elektr. Wegfahrsperre, ESP, Freisprecheinrichtung, Garantie, Innenspiegel autom. abblendend, Isofix, Lederlenkrad, Leichtmetallfelgen, Lichtsensor, Multifunktionslenkrad, Nichtraucher-Fahrzeug, Pannenkit, Panorama-Dach, Regensensor, Reifendruckkontrolle, Scheckheftgepflegt, Servolenkung, Sitzheizung, Sprachsteuerung, Start/Stopp-Automatik, Tagfahrlicht, Tempomat, Touchscreen, Traktionskontrolle, Tuner/Radio, USB, Zentralverriegelung
+</p>",Opel,,"Marke_Opel, Typ_Kleinwagen, Alter_maximal 2 Jahre,Alter_maximal 5 Jahre,Alter_Alle, Kilometerstand_maximal 20.000 km,Kilometerstand_maximal 50.000 km,Kilometerstand_maximal 80.000 km,Kilometerstand_maximal 100.000 km, Leistung_70 bis 100 PS,Leistung_Alle, Schaltung_Schaltgetriebe, Farbe_Rot, Kraftstoff_Benzin, Zustand_Gebraucht, Preis_Premium (ab 400 €)",WAHR,Deine Abo Dauer,3 Monate,Dein monatliches Kilometerpaket,500 km,,,ADA,0,,0,deny,manual,448,,FALSCH,WAHR,,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/tIgAAOSwgxhfIDs6/$_27.JPG,1,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/Ri4AAOSwgc5fIDs6/$_27.JPG,2,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/SMgAAOSwF9FfIDs6/$_27.JPG,3,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/DxAAAOSw7qtfIDs6/$_27.JPG,4,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/xgwAAOSwsu9fIDs6/$_27.JPG,5,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/rxEAAOSwVRdfIDs6/$_27.JPG,6,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/zvsAAOSwdbpfIDs6/$_27.JPG,7,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/Qx4AAOSwbG9fIDs7/$_27.JPG,8,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/jqcAAOSwp~dfIDs6/$_27.JPG,9,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/cHEAAOSwU~RfIDs6/$_27.JPG,10,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/Hf8AAOSw2-FfIDs6/$_27.JPG,11,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/POcAAOSwLoZfIDs6/$_27.JPG,12,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/tIgAAOSwgxhfIDs6/$_27.JPG,13,,,,,,,,,,,,,,,,,nil
+,,,13702,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,3 Monate,,1000 km,,,ADA,0,,0,deny,manual,473,,FALSCH,WAHR
+,,,13675,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,3 Monate,,1500 km,,,ADA,0,,0,deny,manual,499,,FALSCH,WAHR
+,,,13648,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,3 Monate,,2000 km,,,ADA,0,,0,deny,manual,524,,FALSCH,WAHR
+,,,13621,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,3 Monate,,2500 km,,,ADA,0,,0,deny,manual,550,,FALSCH,WAHR
+,,,13729,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,4 Monate,,500 km,,,ADA,0,,0,deny,manual,428,,FALSCH,WAHR
+,,,13702,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,4 Monate,,1000 km,,,ADA,0,,0,deny,manual,453,,FALSCH,WAHR
+,,,13675,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,4 Monate,,1500 km,,,ADA,0,,0,deny,manual,479,,FALSCH,WAHR
+,,,13648,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,4 Monate,,2000 km,,,ADA,0,,0,deny,manual,505,,FALSCH,WAHR
+,,,13621,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,4 Monate,,2500 km,,,ADA,0,,0,deny,manual,530,,FALSCH,WAHR
+,,,13729,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,5 Monate,,500 km,,,ADA,0,,0,deny,manual,416,,FALSCH,WAHR
+,,,13702,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,5 Monate,,1000 km,,,ADA,0,,0,deny,manual,441,,FALSCH,WAHR
+,,,13675,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,5 Monate,,1500 km,,,ADA,0,,0,deny,manual,467,,FALSCH,WAHR
+,,,13648,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,5 Monate,,2000 km,,,ADA,0,,0,deny,manual,493,,FALSCH,WAHR
+,,,13621,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,5 Monate,,2500 km,,,ADA,0,,0,deny,manual,518,,FALSCH,WAHR
+,,,13729,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,6 Monate,,500 km,,,ADA,0,,0,deny,manual,408,,FALSCH,WAHR
+,,,13702,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,6 Monate,,1000 km,,,ADA,0,,0,deny,manual,434,,FALSCH,WAHR
+,,,13675,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,6 Monate,,1500 km,,,ADA,0,,0,deny,manual,459,,FALSCH,WAHR
+,,,13648,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,6 Monate,,2000 km,,,ADA,0,,0,deny,manual,485,,FALSCH,WAHR
+,,,13621,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,6 Monate,,2500 km,,,ADA,0,,0,deny,manual,529,,FALSCH,WAHR
+,,,13729,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,7 Monate,,500 km,,,ADA,0,,0,deny,manual,418,,FALSCH,WAHR
+,,,13702,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,7 Monate,,1000 km,,,ADA,0,,0,deny,manual,444,,FALSCH,WAHR
+,,,13675,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,7 Monate,,1500 km,,,ADA,0,,0,deny,manual,469,,FALSCH,WAHR
+,,,13648,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,7 Monate,,2000 km,,,ADA,0,,0,deny,manual,495,,FALSCH,WAHR
+,,,13621,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,7 Monate,,2500 km,,,ADA,0,,0,deny,manual,520,,FALSCH,WAHR
+,,,13729,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,8 Monate,,500 km,,,ADA,0,,0,deny,manual,412,,FALSCH,WAHR
+,,,13702,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,8 Monate,,1000 km,,,ADA,0,,0,deny,manual,437,,FALSCH,WAHR
+,,,13675,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,8 Monate,,1500 km,,,ADA,0,,0,deny,manual,463,,FALSCH,WAHR
+,,,13648,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,8 Monate,,2000 km,,,ADA,0,,0,deny,manual,488,,FALSCH,WAHR
+,,,13621,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,8 Monate,,2500 km,,,ADA,0,,0,deny,manual,514,,FALSCH,WAHR
+,,,13729,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,9 Monate,,500 km,,,ADA,0,,0,deny,manual,407,,FALSCH,WAHR
+,,,13702,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,9 Monate,,1000 km,,,ADA,0,,0,deny,manual,433,,FALSCH,WAHR
+,,,13675,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,9 Monate,,1500 km,,,ADA,0,,0,deny,manual,458,,FALSCH,WAHR
+,,,13648,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,9 Monate,,2000 km,,,ADA,0,,0,deny,manual,484,,FALSCH,WAHR
+,,,13621,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,9 Monate,,2500 km,,,ADA,0,,0,deny,manual,509,,FALSCH,WAHR
+,,,13729,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,10 Monate,,500 km,,,ADA,0,,0,deny,manual,403,,FALSCH,WAHR
+,,,13702,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,10 Monate,,1000 km,,,ADA,0,,0,deny,manual,429,,FALSCH,WAHR
+,,,13675,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,10 Monate,,1500 km,,,ADA,0,,0,deny,manual,454,,FALSCH,WAHR
+,,,13648,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,10 Monate,,2000 km,,,ADA,0,,0,deny,manual,480,,FALSCH,WAHR
+,,,13621,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,10 Monate,,2500 km,,,ADA,0,,0,deny,manual,505,,FALSCH,WAHR
+,,,13729,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,11 Monate,,500 km,,,ADA,0,,0,deny,manual,400,,FALSCH,WAHR
+,,,13702,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,11 Monate,,1000 km,,,ADA,0,,0,deny,manual,425,,FALSCH,WAHR
+,,,13675,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,11 Monate,,1500 km,,,ADA,0,,0,deny,manual,451,,FALSCH,WAHR
+,,,13648,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,11 Monate,,2000 km,,,ADA,0,,0,deny,manual,477,,FALSCH,WAHR
+,,,13621,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,11 Monate,,2500 km,,,ADA,0,,0,deny,manual,502,,FALSCH,WAHR
+,,,13729,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,12 Monate,,500 km,,,ADA,0,,0,deny,manual,397,,FALSCH,WAHR
+,,,13702,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,12 Monate,,1000 km,,,ADA,0,,0,deny,manual,423,,FALSCH,WAHR
+,,,13675,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,12 Monate,,1500 km,,,ADA,0,,0,deny,manual,448,,FALSCH,WAHR
+,,,13648,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,12 Monate,,2000 km,,,ADA,0,,0,deny,manual,474,,FALSCH,WAHR
+,,,13621,Opel-Adam-1.4-120-Jahre-IntelliLink-Klimaaut-PDC-,,,,,,,,12 Monate,,2500 km,,,ADA,0,,0,deny,manual,499,,FALSCH,WAHR
+Schachtschneider Automobile e.K.,"Ulmenstr. 4
+14482 Potsdam
+Deutschland",10490,10368,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,Opel Adam 1.4 120 Jahre IntelliLink Sitzheizung PDC ,"<p>
+<strong>Abholadresse</strong>
+Ulmenstr. 4
+14482 Potsdam
+Deutschland<br>
+<strong>Fahrzeugzustand</strong>
+Unfallfrei<br>
+<strong>Kategorie</strong>
+Kleinwagen<br>
+<strong>Herkunft</strong>
+Deutsche Ausführung<br>
+<strong>Kilometerstand</strong>
+18.496 km<br>
+<strong>Hubraum</strong>
+1.398 cm³<br>
+<strong>Leistung</strong>
+64 kW (87 PS)<br>
+<strong>Kraftstoffart</strong>
+Benzin<br>
+<strong>Verbrauch</strong><br>
+ca. 5,6 l/100km (kombiniert)<br>
+ca. 7,0 l/100km (innerorts)<br>
+ca. 4,8 l/100km (außerorts)<br>
+<strong>CO2-Emission</strong>
+ca. 154 g/km (kombiniert)<br>
+<strong>Anzahl der Türen</strong>
+2/3<br>
+<strong>Anzahl Sitzplätze</strong>
+4<br>
+<strong>Getriebe</strong>
+Schaltgetriebe<br>
+<strong>Schadstoffklasse</strong>
+Euro6d-TEMP<br>
+<strong>Umweltplakette</strong>
+4 (Grün)<br>
+<strong>Erstzulassung</strong>
+03/2019<br>
+<strong>Anzahl der Fahrzeughalter</strong>
+1<br>
+<strong>HU</strong>
+Neu<br>
+<strong>Klimatisierung</strong>
+Klimaanlage<br>
+<strong>Farbe (Hersteller)</strong>
+Cream White<br>
+<strong>Farbe</strong>
+Weiß<br>
+<strong>Innenausstattung</strong>
+Teilleder, Schwarz<br>
+<strong>Weitere Eigenschaften</strong><br>
+ABS, Allwetterreifen, Android Auto, Apple CarPlay, Beheizbares Lenkrad, Berganfahrassistent, Bluetooth, Bordcomputer, Elektr. Fensterheber, Elektr. Seitenspiegel, Elektr. Wegfahrsperre, ESP, Freisprecheinrichtung, Garantie, Innenspiegel autom. abblendend, Isofix, Lederlenkrad, LED-Tagfahrlicht, Leichtmetallfelgen, Lichtsensor, Multifunktionslenkrad, Nichtraucher-Fahrzeug, Notrad, Regensensor, Reifendruckkontrolle, Scheckheftgepflegt, Servolenkung, Sitzheizung, Sprachsteuerung, Start/Stopp-Automatik, Tempomat, Touchscreen, Traktionskontrolle, Tuner/Radio, USB, Zentralverriegelung
+</p>",Opel,,"Marke_Opel, Typ_Kleinwagen, Alter_maximal 2 Jahre,Alter_maximal 5 Jahre,Alter_Alle, Kilometerstand_maximal 20.000 km,Kilometerstand_maximal 50.000 km,Kilometerstand_maximal 80.000 km,Kilometerstand_maximal 100.000 km, Leistung_70 bis 100 PS,Leistung_Alle, Schaltung_Schaltgetriebe, Farbe_Weiß, Kraftstoff_Benzin, Zustand_Gebraucht, Preis_Mittel (200 bis 400 €)",WAHR,Deine Abo Dauer,3 Monate,Dein monatliches Kilometerpaket,500 km,,,ADA,0,,0,deny,manual,392,,FALSCH,WAHR,,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/xWUAAOSwSKBd5oQk/$_27.JPG,1,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/~JAAAOSwqNxd5oQk/$_27.JPG,2,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/fyoAAOSwFlJd5oQk/$_27.JPG,3,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/DTEAAOSwU0Vd5oQk/$_27.JPG,4,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/1acAAOSw06Bd5oQk/$_27.JPG,5,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/Tg4AAOSw0Udd5oQk/$_27.JPG,6,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/QREAAOSw74Rd5oQm/$_27.JPG,7,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/oiAAAOSwxR9d5oQk/$_27.JPG,8,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/OzMAAOSwNHZd5oQk/$_27.JPG,9,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/AFkAAOSwYS5d5oQk/$_27.JPG,10,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/AwkAAOSwSq1d5oQl/$_27.JPG,11,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/PvwAAOSw0lRd5oQk/$_27.JPG,12,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/xgkAAOSwIZJd5oQk/$_27.JPG,13,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/0TIAAOSwCHhd5oQk/$_27.JPG,14,https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/xWUAAOSwSKBd5oQk/$_27.JPG,15,,,,,,,,,,,,,nil
+,,,10348,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,3 Monate,,1000 km,,,ADA,0,,0,deny,manual,411,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,3 Monate,,1500 km,,,ADA,0,,0,deny,manual,431,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,3 Monate,,2000 km,,,ADA,0,,0,deny,manual,450,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,3 Monate,,2500 km,,,ADA,0,,0,deny,manual,469,,FALSCH,WAHR
+,,,10368,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,4 Monate,,500 km,,,ADA,0,,0,deny,manual,372,,FALSCH,WAHR
+,,,10348,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,4 Monate,,1000 km,,,ADA,0,,0,deny,manual,391,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,4 Monate,,1500 km,,,ADA,0,,0,deny,manual,411,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,4 Monate,,2000 km,,,ADA,0,,0,deny,manual,430,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,4 Monate,,2500 km,,,ADA,0,,0,deny,manual,449,,FALSCH,WAHR
+,,,10368,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,5 Monate,,500 km,,,ADA,0,,0,deny,manual,360,,FALSCH,WAHR
+,,,10348,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,5 Monate,,1000 km,,,ADA,0,,0,deny,manual,380,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,5 Monate,,1500 km,,,ADA,0,,0,deny,manual,399,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,5 Monate,,2000 km,,,ADA,0,,0,deny,manual,418,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,5 Monate,,2500 km,,,ADA,0,,0,deny,manual,437,,FALSCH,WAHR
+,,,10368,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,6 Monate,,500 km,,,ADA,0,,0,deny,manual,352,,FALSCH,WAHR
+,,,10348,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,6 Monate,,1000 km,,,ADA,0,,0,deny,manual,372,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,6 Monate,,1500 km,,,ADA,0,,0,deny,manual,391,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,6 Monate,,2000 km,,,ADA,0,,0,deny,manual,410,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,6 Monate,,2500 km,,,ADA,0,,0,deny,manual,448,,FALSCH,WAHR
+,,,10368,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,7 Monate,,500 km,,,ADA,0,,0,deny,manual,362,,FALSCH,WAHR
+,,,10348,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,7 Monate,,1000 km,,,ADA,0,,0,deny,manual,382,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,7 Monate,,1500 km,,,ADA,0,,0,deny,manual,401,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,7 Monate,,2000 km,,,ADA,0,,0,deny,manual,420,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,7 Monate,,2500 km,,,ADA,0,,0,deny,manual,440,,FALSCH,WAHR
+,,,10368,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,8 Monate,,500 km,,,ADA,0,,0,deny,manual,356,,FALSCH,WAHR
+,,,10348,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,8 Monate,,1000 km,,,ADA,0,,0,deny,manual,375,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,8 Monate,,1500 km,,,ADA,0,,0,deny,manual,395,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,8 Monate,,2000 km,,,ADA,0,,0,deny,manual,414,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,8 Monate,,2500 km,,,ADA,0,,0,deny,manual,433,,FALSCH,WAHR
+,,,10368,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,9 Monate,,500 km,,,ADA,0,,0,deny,manual,351,,FALSCH,WAHR
+,,,10348,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,9 Monate,,1000 km,,,ADA,0,,0,deny,manual,371,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,9 Monate,,1500 km,,,ADA,0,,0,deny,manual,390,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,9 Monate,,2000 km,,,ADA,0,,0,deny,manual,409,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,9 Monate,,2500 km,,,ADA,0,,0,deny,manual,428,,FALSCH,WAHR
+,,,10368,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,10 Monate,,500 km,,,ADA,0,,0,deny,manual,347,,FALSCH,WAHR
+,,,10348,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,10 Monate,,1000 km,,,ADA,0,,0,deny,manual,367,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,10 Monate,,1500 km,,,ADA,0,,0,deny,manual,386,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,10 Monate,,2000 km,,,ADA,0,,0,deny,manual,405,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,10 Monate,,2500 km,,,ADA,0,,0,deny,manual,425,,FALSCH,WAHR
+,,,10368,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,11 Monate,,500 km,,,ADA,0,,0,deny,manual,344,,FALSCH,WAHR
+,,,10348,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,11 Monate,,1000 km,,,ADA,0,,0,deny,manual,364,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,11 Monate,,1500 km,,,ADA,0,,0,deny,manual,383,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,11 Monate,,2000 km,,,ADA,0,,0,deny,manual,402,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,11 Monate,,2500 km,,,ADA,0,,0,deny,manual,421,,FALSCH,WAHR
+,,,10368,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,12 Monate,,500 km,,,ADA,0,,0,deny,manual,342,,FALSCH,WAHR
+,,,10348,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,12 Monate,,1000 km,,,ADA,0,,0,deny,manual,361,,FALSCH,WAHR
+,,,10328,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,12 Monate,,1500 km,,,ADA,0,,0,deny,manual,380,,FALSCH,WAHR
+,,,10307,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,12 Monate,,2000 km,,,ADA,0,,0,deny,manual,399,,FALSCH,WAHR
+,,,10287,Opel-Adam-1.4-120-Jahre-IntelliLink-Sitzheizung-PDC-,,,,,,,,12 Monate,,2500 km,,,ADA,0,,0,deny,manual,419,,FALSCH,WAHR

@@ -4,6 +4,7 @@ require 'open-uri'
 require 'capybara/dsl'
 include Capybara::DSL
 require 'csv'
+require 'pry-byebug'
 
 class CarDealersController < ApplicationController
   def new
@@ -31,43 +32,72 @@ class CarDealersController < ApplicationController
     params.require(:car_dealer).permit(:url_path)
   end
 
-  def pricing(selling_price,power,cubic_cap,fuel_type)
+  def pricing(selling_price_gross, power, cubic_cap, fuel_type, emission)
+    # margin (percentage)
+    margin = 10.0 / 100
+
+    # all costs in net euro
+    vat = 16.0 / 100
+    insur_vat = 19.0 / 100
+
+    # Selling price net
+    selling_price = selling_price_gross / (1.0 + vat)
+    # Internal setup cost
     # non-recurring costs
-    registration = 100.0
-    warranty_month = 232.0 / 12
+    ada_setup_cost = 100.0
+    registration = 100.0 / (1 + vat)
+
     # only occurs every 10000 km
-    maintenance = 100.0
+    maintenance = 100.0 / (1 + vat)
     maintenance_fee = 0
+
+    # general inspection TUEV month
+    gen_inspection = 100.0 / 12 / (1 + vat)
+
     # recurring costs
-    loan_interest_year = 6.0 / 100
-    loan_cost_month = loan_interest_year * selling_price / 12
-    margin = 30.0 / 100
-    gez_month = 5.38
+    loan_interest_year = 5.0 / 100
+    loan_cost_month = loan_interest_year * selling_price_gross / 12
+    warranty_month = 170.0 / 12 / (1 + vat)
+
+    # taxes
+    # emission tax per g above 95
+    emis_tax_month = 2.0 / 12
+    tolerance_emis = 95.0
+    diesel_tax_month = 9.5 / 12
+    benzin_tax_month = 2.0 / 12
+
+    gez_month = 5.38 / (1 + vat)
+
     # payment provider
-    transaction_fee = 0.36
-    solvency_fee = 0.45
+    transaction_fee = 0.06 / (1 + vat)
+    solvency_fee = 0.45 / (1 + vat)
     payment_share = 3.0 / 1000
+
     # setup_fee = 199.0
     # vat = 16.0 / 100
     # insurance
     power_kw = power / 1.36
     if power_kw < 66
-      insurance_month = 66.0
+      insurance_month = 87.5 / (1 + insur_vat)
     elsif power_kw > 66 && power_kw < 99
-      insurance_month = 95.0
+      insurance_month = 98.8 / (1 + insur_vat)
     elsif power_kw > 99 && power_kw < 130
-      insurance_month = 130.0
+      insurance_month = 111.30 / (1 + insur_vat)
     elsif power_kw > 130 && power_kw < 210
-      insurance_month = 123.0
+      insurance_month = 134.00 / (1 + insur_vat)
     end
+
     # car tax
     if fuel_type == 'Diesel'
-      car_tax_month = cubic_cap.to_f / 100 * 9.5 / 12
+      car_tax_month = cubic_cap.to_f / 100 * diesel_tax_month
     elsif fuel_type == 'Benzin'
-      car_tax_month = cubic_cap.to_f / 100 * 2 / 12
-    elsif fuel_type == 'Elektro' || fuel_type == 'Erdgas'
+      car_tax_month = cubic_cap.to_f / 100 * benzin_tax_month
+    elsif ['Elektro', 'Erdgas'].include?(fuel_type)
       car_tax_month = 0
     end
+
+    car_tax_month += (emission - tolerance_emis) * emis_tax_month
+
     # depreciation
     depreciation_month = {
       's' => 12.0 / 100 * selling_price / 12,
@@ -85,15 +115,54 @@ class CarDealersController < ApplicationController
         if  a == 'xxl' && i >= 6 || a == 'xl' && i >= 8 || a == 'l' && i >= 10
           maintenance_fee = maintenance
         end
-        fees["preis_#{i}_#{a}"] = ((((registration + maintenance_fee +
+        # payment provider share costs
+        payment_share_cost = payment_share * (((ada_setup_cost + registration +
+                             maintenance_fee + solvency_fee) / i + warranty_month +
+                             car_tax_month + insurance_month + gez_month + transaction_fee +
+                             gen_inspection + depreciation_month[a] + loan_cost_month)) *
+                             (1 + margin) * (1 + vat)
+        fees["preis_#{i}_#{a}"] = (((((ada_setup_cost + registration + maintenance_fee +
                                   solvency_fee) / i + warranty_month + car_tax_month +
                                   insurance_month + gez_month + transaction_fee +
-                                  depreciation_month[a] + loan_cost_month)) *
-                                  (1 + margin) * (1 + payment_share)).round
+                                  gen_inspection + depreciation_month[a] + loan_cost_month +
+                                  payment_share_cost)) * (1 + margin)) * (1 + vat)).round
       end
       i += 1
     end
     fees
+  end
+
+  def reselling_prices(selling_price_gross)
+    # Tax
+    vat = 16.0 / 100
+    # registration cost
+    registration = 100.0 / (1 + vat)
+    # general inspection TUEV month
+    gen_inspection_month = 100.0 / 12 / (1 + vat)
+    # used car insuracne
+    warranty_month = 170.0 / 12 / (1 + vat)
+
+    selling_price = selling_price_gross / (1 + vat)
+    depreciation_month = {
+      's' => 12.0 / 100 * selling_price / 12,
+      'm' => 14.0 / 100 * selling_price / 12,
+      'l' => 16.0 / 100 * selling_price / 12,
+      'xl' => 18.0 / 100 * selling_price / 12,
+      'xxl' => 20.0 / 100 * selling_price / 12
+    }
+
+    # subscription price
+    i = 3
+    reselling_prices = Hash.new
+    while i <= 12
+      for a in ['s', 'm', 'l', 'xl', 'xxl'] do
+        reselling_prices["#{i}_#{a}"] = (selling_price_gross - (registration +
+                                        (depreciation_month[a] + gen_inspection_month +
+                                        warranty_month) * i) * (1 + vat)).round
+      end
+      i += 1
+    end
+    reselling_prices
   end
 
   def scraper(url_path)
@@ -104,6 +173,10 @@ class CarDealersController < ApplicationController
     # write headline csv
     CSV.open(filepath, 'wb', csv_options) do |csv|
       csv << [
+        'Dealer name',
+        'Dealer adress',
+        'Purchase price',
+        'Reselling price',
         'Handle',
         'Title',
         'Body (HTML)',
@@ -208,7 +281,6 @@ class CarDealersController < ApplicationController
       car = Hash.new
 
       begin
-
         attributes = find('#des > div.des > div > div.vehicleMainInfo.right > div.vehicleAttributes > div.left > span.attributes').text
         car["Kilometerstand"] = attributes.match(/(\d*[.]\d{3}|\d*) km/)[0]
         car["Leistung"] = attributes.match(/\d*\skW\s.\d*\sPS./)[0]
@@ -414,9 +486,9 @@ class CarDealersController < ApplicationController
           zustand_tag = "Zustand_Gebraucht"
 
           # pricing arithmetic
-          abo_preise = pricing( car['Preis'].gsub(/[^\d]/,'').to_i,leistung.to_i,
-                                car['Hubraum'].gsub(/[^\d]/,'').to_i,
-                                car["Kraftstoffart"])
+          abo_preise = pricing(car['Preis'].gsub(/[^\d]/, '').to_i, leistung.to_i,
+                               car['Hubraum'].gsub(/[^\d]/, '').to_i,
+                               car['Kraftstoffart'], car['CO2-Emission'].gsub(/[^\d]/, '').to_i)
           car.merge!(abo_preise)
           # pricing arithmetic
 
@@ -427,6 +499,9 @@ class CarDealersController < ApplicationController
           elsif car['preis_3_s'] > 400
             preis_tag = "Preis_Premium (ab 400 €)"
           end
+
+          # Depreciation
+          reselling = reselling_prices(car['Preis'].gsub(/[^\d]/, '').to_i)
 
           # concat all tags
           car['Tags'] = "#{marke_tag}, #{typ_tag}, #{alter_tag.join(',')}, #{km_stand_tag.join(',')}, #{leistung_tag.join(',')}, #{getriebe_tag}, #{farbe_tag}, #{kraftstoff_tag}, #{zustand_tag}, #{preis_tag}"
@@ -449,6 +524,10 @@ class CarDealersController < ApplicationController
           CSV.open(filepath, 'a', csv_options) do |csv|
           # car.each do |car|
             csv << [
+              car['Dealer'],
+              car['Pickup_location'],
+              car['Preis'].gsub(/[^\d]/, '').to_i,
+              reselling['3_s'],
               car['Handle'],
               car['Title'],
               car['Body (HTML)'],
@@ -517,176 +596,224 @@ class CarDealersController < ApplicationController
               car['Bild_index_21'],
               'nil'
             ]
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '3 Monate', nil, "1000 km",
-                    nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_3_m'], nil,
-                    'FALSCH', 'WAHR']
+            csv << [nil, nil, nil, reselling['3_m'], car['Handle'], nil, nil, nil, nil, nil,
+                    nil, nil, '3 Monate', nil, "1000 km", nil, nil, 'ADA', '0', nil, '0',
+                    'deny', 'manual', car['preis_3_m'], nil, 'FALSCH', 'WAHR']
 
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '3 Monate', nil, "1500 km",
+            csv << [nil, nil, nil, reselling['3_l'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '3 Monate', nil, "1500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_3_l'], nil,
                     'FALSCH', 'WAHR']
 
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '3 Monate', nil, "2000 km",
+            csv << [nil, nil, nil, reselling['3_xl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '3 Monate', nil, "2000 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_3_xl'], nil,
                     'FALSCH', 'WAHR']
 
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '3 Monate', nil, "2500 km",
+            csv << [nil, nil, nil, reselling['3_xxl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '3 Monate', nil, "2500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_3_xxl'], nil,
                     'FALSCH', 'WAHR']
 
             # 4 Monate
-
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '4 Monate', nil, "500 km",
+            csv << [nil, nil, nil, reselling['4_s'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '4 Monate', nil, "500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_4_s'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '4 Monate', nil, "1000 km",
+            csv << [nil, nil, nil, reselling['4_m'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '4 Monate', nil, "1000 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_4_m'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '4 Monate', nil, "1500 km",
+            csv << [nil, nil, nil, reselling['4_l'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '4 Monate', nil, "1500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_4_l'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '4 Monate', nil, "2000 km",
+            csv << [nil, nil, nil, reselling['4_xl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '4 Monate', nil, "2000 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_4_xl'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '4 Monate', nil, "2500 km",
+            csv << [nil, nil, nil, reselling['4_xxl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '4 Monate', nil, "2500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_4_xxl'], nil,
                     'FALSCH', 'WAHR']
 
             # 5 Monate
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '5 Monate', nil, "500 km",
+            csv << [nil, nil, nil, reselling['5_s'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '5 Monate', nil, "500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_5_s'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '5 Monate', nil, "1000 km",
+            csv << [nil, nil, nil, reselling['5_m'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '5 Monate', nil, "1000 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_5_m'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '5 Monate', nil, "1500 km",
+            csv << [nil, nil, nil, reselling['5_l'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '5 Monate', nil, "1500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_5_l'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '5 Monate', nil, "2000 km",
+            csv << [nil, nil, nil, reselling['5_xl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '5 Monate', nil, "2000 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_5_xl'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '5 Monate', nil, "2500 km",
+            csv << [nil, nil, nil, reselling['5_xxl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '5 Monate', nil, "2500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_5_xxl'], nil,
                     'FALSCH', 'WAHR']
+
             # 6 Monate
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '6 Monate', nil, "500 km",
+            csv << [nil, nil, nil, reselling['6_s'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '6 Monate', nil, "500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_6_s'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '6 Monate', nil, "1000 km",
+            csv << [nil, nil, nil, reselling['6_m'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '6 Monate', nil, "1000 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_6_m'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '6 Monate', nil, "1500 km",
+            csv << [nil, nil, nil, reselling['6_l'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '6 Monate', nil, "1500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_6_l'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '6 Monate', nil, "2000 km",
+            csv << [nil, nil, nil, reselling['6_xl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '6 Monate', nil, "2000 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_6_xl'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '6 Monate', nil, "2500 km",
+            csv << [nil, nil, nil, reselling['6_xxl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '6 Monate', nil, "2500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_6_xxl'], nil,
                     'FALSCH', 'WAHR']
             # 7 Monate
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '7 Monate', nil, "500 km",
+            csv << [nil, nil, nil, reselling['7_s'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '7 Monate', nil, "500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_7_s'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '7 Monate', nil, "1000 km",
+            csv << [nil, nil, nil, reselling['7_m'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '7 Monate', nil, "1000 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_7_m'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '7 Monate', nil, "1500 km",
+            csv << [nil, nil, nil, reselling['7_l'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '7 Monate', nil, "1500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_7_l'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '7 Monate', nil, "2000 km",
+            csv << [nil, nil, nil, reselling['7_xl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '7 Monate', nil, "2000 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_7_xl'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '7 Monate', nil, "2500 km",
+            csv << [nil, nil, nil, reselling['7_xxl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '7 Monate', nil, "2500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_7_xxl'], nil,
                     'FALSCH', 'WAHR']
 
             # 8 Monate
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '8 Monate', nil, "500 km",
+            csv << [nil, nil, nil, reselling['8_s'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '8 Monate', nil, "500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_8_s'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '8 Monate', nil, "1000 km",
+            csv << [nil, nil, nil, reselling['8_m'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '8 Monate', nil, "1000 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_8_m'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '8 Monate', nil, "1500 km",
+            csv << [nil, nil, nil, reselling['8_l'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '8 Monate', nil, "1500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_8_l'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '8 Monate', nil, "2000 km",
+            csv << [nil, nil, nil, reselling['8_xl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '8 Monate', nil, "2000 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_8_xl'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '8 Monate', nil, "2500 km",
+            csv << [nil, nil, nil, reselling['8_xxl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '8 Monate', nil, "2500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_8_xxl'], nil,
                     'FALSCH', 'WAHR']
             # 9 Monate
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '9 Monate', nil, "500 km",
+            csv << [nil, nil, nil, reselling['9_s'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '9 Monate', nil, "500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_9_s'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '9 Monate', nil, "1000 km",
+            csv << [nil, nil, nil, reselling['9_m'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '9 Monate', nil, "1000 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_9_m'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '9 Monate', nil, "1500 km",
+            csv << [nil, nil, nil, reselling['9_l'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '9 Monate', nil, "1500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_9_l'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '9 Monate', nil, "2000 km",
+            csv << [nil, nil, nil, reselling['9_xl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '9 Monate', nil, "2000 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_9_xl'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '9 Monate', nil, "2500 km",
+            csv << [nil, nil, nil, reselling['9_xxl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '9 Monate', nil, "2500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_9_xxl'], nil,
                     'FALSCH', 'WAHR']
 
             # 10 Monate
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '10 Monate', nil, "500 km",
+            csv << [nil, nil, nil, reselling['10_s'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '10 Monate', nil, "500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_10_s'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '10 Monate', nil, "1000 km",
+            csv << [nil, nil, nil, reselling['10_m'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '10 Monate', nil, "1000 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_10_m'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '10 Monate', nil, "1500 km",
+            csv << [nil, nil, nil, reselling['10_l'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '10 Monate', nil, "1500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_10_l'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '10 Monate', nil, "2000 km",
+            csv << [nil, nil, nil, reselling['10_xl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '10 Monate', nil, "2000 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_10_xl'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '10 Monate', nil, "2500 km",
+            csv << [nil, nil, nil, reselling['10_xxl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '10 Monate', nil, "2500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_10_xxl'], nil,
                     'FALSCH', 'WAHR']
 
             # 11 Monate
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '11 Monate', nil, "500 km",
+            csv << [nil, nil, nil, reselling['11_s'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '11 Monate', nil, "500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_11_s'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '11 Monate', nil, "1000 km",
+            csv << [nil, nil, nil, reselling['11_m'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '11 Monate', nil, "1000 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_11_m'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '11 Monate', nil, "1500 km",
+            csv << [nil, nil, nil, reselling['11_l'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '11 Monate', nil, "1500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_11_l'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '11 Monate', nil, "2000 km",
+            csv << [nil, nil, nil, reselling['11_xl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '11 Monate', nil, "2000 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_11_xl'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '11 Monate', nil, "2500 km",
+            csv << [nil, nil, nil, reselling['11_xxl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '11 Monate', nil, "2500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_11_xxl'], nil,
                     'FALSCH', 'WAHR']
 
             # 12 Monate
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '12 Monate', nil, "500 km",
+            csv << [nil, nil, nil, reselling['12_s'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '12 Monate', nil, "500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_12_s'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '12 Monate', nil, "1000 km",
+            csv << [nil, nil, nil, reselling['12_m'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '12 Monate', nil, "1000 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_12_m'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '12 Monate', nil, "1500 km",
+            csv << [nil, nil, nil, reselling['12_l'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '12 Monate', nil, "1500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_12_l'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '12 Monate', nil, "2000 km",
+            csv << [nil, nil, nil, reselling['12_xl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '12 Monate', nil, "2000 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_12_xl'], nil,
                     'FALSCH', 'WAHR']
-            csv << [car['Handle'], nil, nil, nil, nil, nil, nil, nil, '12 Monate', nil, "2500 km",
+            csv << [nil, nil, nil, reselling['12_xxl'],
+                    car['Handle'], nil, nil, nil, nil, nil, nil, nil, '12 Monate', nil, "2500 km",
                     nil, nil, 'ADA', '0', nil, '0', 'deny', 'manual', car['preis_12_xxl'], nil,
                     'FALSCH', 'WAHR']
           # end
           end
-          # p += 1
-          # break if p > 30
+          p += 1
+          break if p > 4
         end
       # rescue Capybara::ElementNotFound
       #   puts "ElementNotFound"
@@ -698,7 +825,6 @@ class CarDealersController < ApplicationController
         puts "NoMethodError"
       rescue Capybara::ElementNotFound
         puts "Capybara::ElementNotFound"
-
       end
     end
     # # open csv file
