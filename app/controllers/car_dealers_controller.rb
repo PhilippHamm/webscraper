@@ -78,13 +78,13 @@ class CarDealersController < ApplicationController
     # insurance
     power_kw = power / 1.36
     if power_kw < 66
-      insurance_month = 87.5 / (1 + insur_vat)
+      insurance_month = 87.5
     elsif power_kw > 66 && power_kw < 99
-      insurance_month = 98.8 / (1 + insur_vat)
+      insurance_month = 98.8
     elsif power_kw > 99 && power_kw < 130
-      insurance_month = 111.30 / (1 + insur_vat)
+      insurance_month = 111.30
     elsif power_kw > 130 && power_kw < 210
-      insurance_month = 134.00 / (1 + insur_vat)
+      insurance_month = 134.00
     end
 
     # car tax
@@ -297,7 +297,7 @@ class CarDealersController < ApplicationController
         power = car["Leistung"].match(/^\d*/)[0].to_i
         price = car["Preis"].gsub(/[^\d]/,'').to_i
 
-        if  km_stand < 60000 && km_stand > 10000 && price < 30000 && power < 210 &&
+        if  km_stand < 60000 && km_stand > 1000 && price < 30000 && power < 210 &&
             car["Kraftstoffart"].match?(/(Diesel|Benzin)/) &&
             car["Kategorie"].match?(/(SUV|Kleinwagen|Kombi|Sportwagen|Limousine)/)
 
@@ -329,8 +329,7 @@ class CarDealersController < ApplicationController
           begin
             find('#galleryLarge > div > div.imageView.flexslider.mainImage.modalBox > div > ul > li.slide.Large.flex-active-slide > div > img', visible: false).click
           rescue  Selenium::WebDriver::Error::ElementNotInteractableError
-            sleep(1)
-
+            sleep(3)
             find('#galleryLarge > div > div.imageView.flexslider.mainImage.modalBox > div > ul > li.slide.Large.flex-active-slide > div > img', visible: false).click
           end
           # assign data to hash
@@ -812,8 +811,8 @@ class CarDealersController < ApplicationController
                     'FALSCH', 'WAHR']
           # end
           end
-          p += 1
-          break if p > 4
+          # p += 1
+          # break if p > 4
         end
       # rescue Capybara::ElementNotFound
       #   puts "ElementNotFound"
