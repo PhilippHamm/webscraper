@@ -320,7 +320,7 @@ class CarDealersController < ApplicationController
           end
           # image position holder csv
           j = 0
-          22.times do
+          23.times do
             if car["Bild_#{j}"]
               car["Bild_index_#{j}"] = j
               j += 1
@@ -379,7 +379,7 @@ class CarDealersController < ApplicationController
           car["Link"] = "https://home.mobile.de/AH-SCHACHTSCHNEIDER#des_#{id}"
 
           # Assign data for import sheet shopify
-          car['Vendor'] = car['Titel'].match(/^[A-Za-z-]*/)[0]
+          car['Vendor'] = car['Titel'].match(/^[A-Za-z-ë]*/)[0]
           car['Title'] = car['Titel'].gsub(/[+&\/*;,()'_]/, ' ')
           car['Handle'] = "#{car['Title'].gsub(/\s/,'-')}"
           car['Dealer'] = find('#container > footer > div > div > div:nth-child(3) > address > strong').text
@@ -592,8 +592,7 @@ class CarDealersController < ApplicationController
               car['Bild_20'],
               car['Bild_index_20'],
               car['Bild_21'],
-              car['Bild_index_21'],
-              'nil'
+              car['Bild_index_21']
             ]
             csv << [nil, nil, nil, reselling['3_m'], car['Handle'], nil, nil, nil, nil, nil,
                     nil, nil, '3 Monate', nil, "1000 km", nil, nil, 'ADA', '0', nil, '0',
