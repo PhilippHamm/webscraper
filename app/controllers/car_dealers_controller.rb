@@ -33,10 +33,12 @@ class CarDealersController < ApplicationController
     # open csv file
     csv_options = { col_sep: ',' }
 
-    # Name file
+    # Name and path of file
     filepath    = Rails.root.join('lib', 'data', "#{DateTime.now.strftime("%Y-%m-%d-%k:%M")}_#{dealer_url}.csv")
 
     # Write headline for csv file
+    # First four headlines are not relevant for shopify and serve as dealer reference
+    # Before starting shopify import the first 4 columns must be deleted
     CSV.open(filepath, 'wb', csv_options) do |csv|
       csv << [
         'Dealer name',
@@ -176,6 +178,7 @@ class CarDealersController < ApplicationController
         power = car["Leistung"].match(/^\d*/)[0].to_i
         price = car["Preis"].gsub(/[^\d]/,'').to_i
 
+        # !!!!!!!!!!!!!!!!!!!!!!!
         # Check if the car fulfils ADA requirements
         if  km_stand < 60000 && km_stand > 1000 && price < 30000 && power < 210 &&
             car["Kraftstoffart"].match?(/(Diesel|Benzin)/) &&
@@ -206,6 +209,7 @@ class CarDealersController < ApplicationController
 
           # Image position holder csv
           j = 0
+          # !!!!!!!! If quantitiy of pictures to be changed
           23.times do
             if car["Bild_#{j}"]
               car["Bild_index_#{j}"] = j
@@ -277,7 +281,8 @@ class CarDealersController < ApplicationController
           car['Dealer'] = find('#container > footer > div > div > div:nth-child(3) > address > strong').text
           car['Pickup_location'] = find('#container > footer > div > div > div:nth-child(3) > address > div.span12.addressData').text
 
-          # ASsign data for Shopify description field
+          # Assign data for Shopify description field
+          # !!!!!!!!!!!!!! To be changed for frontend changes (fe wording)
           car['Body (HTML)'] =
 "<p>
 <strong>Abholadresse</strong>
@@ -328,6 +333,7 @@ class CarDealersController < ApplicationController
 #{car['Weitere Eigenschaften']}
 </p>"
 
+          # !!!!!!!!!!!!!!!!!!!!!! Filter boxes in Shopify
           # Create and assign Shopify tags
           marke_tag = "Marke_#{car['Vendor']}"
           typ_tag = "Typ_#{car['Kategorie'].match(/^[SUV|Kleinwagen|Kombi|Sportwagen|Limousine]*/)[0]}"
@@ -382,16 +388,17 @@ class CarDealersController < ApplicationController
           kraftstoff_tag = "Kraftstoff_#{car['Kraftstoffart']}"
           zustand_tag = "Zustand_Gebraucht"
 
-          # Call function to create prices acc. to pricing mecanic
+          # !!!!!!!!!!!!!!!!!!!!
+          # Call function pricing to create prices acc. to pricing mecanic
           abo_preise = pricing(car['Preis'].gsub(/[^\d]/, '').to_i, leistung.to_i,
                                car['Hubraum'].gsub(/[^\d]/, '').to_i,
                                car['Kraftstoffart'], car['CO2-Emission'].gsub(/[^\d]/, '').to_i)
           car.merge!(abo_preise)
 
           # Assign Shopify price tags
-          if car['preis_12_s'] < 200
+          if car['preis_12_s'] <= 200
             preis_tag = "Preis_Günstig (bis 200 €)"
-          elsif car['preis_12_s'] > 200 && abo_preise['preis_12_s'] < 400
+          elsif car['preis_12_s'] > 200 && abo_preise['preis_12_s'] <= 400
             preis_tag = "Preis_Mittel (200 bis 400 €)"
           elsif car['preis_12_s'] > 400
             preis_tag = "Preis_Premium (ab 400 €)"
@@ -403,6 +410,7 @@ class CarDealersController < ApplicationController
           # Concat all tags
           car['Tags'] = "#{marke_tag}, #{typ_tag}, #{alter_tag.join(',')}, #{km_stand_tag.join(',')}, #{leistung_tag.join(',')}, #{getriebe_tag}, #{farbe_tag}, #{kraftstoff_tag}, #{zustand_tag}, #{preis_tag}"
 
+          # !!!!!!!!!!! Relevant for frontend changes
           # Write first line of each car in csv file
           CSV.open(filepath, 'a', csv_options) do |csv|
             csv << [
@@ -506,9 +514,9 @@ class CarDealersController < ApplicationController
               end
             end
           end
-          # Uncomment to limit number of scraped ads
-          p += 1
-          break if p > 6
+          # # Uncomment to limit number of scraped ads
+          # p += 1
+          # break if p > 6
         end
 
       rescue TypeError
