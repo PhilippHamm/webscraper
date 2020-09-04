@@ -18,13 +18,10 @@ class CarsController < ApplicationController
   def create
     @car = Car.new
     cars = scraper(@car, car_params[:dealer_city])
-
-
   end
 
   def destroy
   end
-
 
   # This is just for checking the form style of the dealer landing page, not relevant for scraper
   def form
